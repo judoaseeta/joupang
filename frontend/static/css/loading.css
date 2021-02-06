@@ -1,0 +1,44 @@
+#loading {
+    position: relative;
+}
+#loading h4 {
+    text-align:center;
+}
+.loading_page{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes bodyBounce {
+    from {
+        transform: translate3d(0,0,0);
+    }
+    to {
+        transform: translate3d(0,-5%,0);
+    }
+}
+@keyframes wheeling {
+    from {
+        transform:rotate(-180deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+.loading_body {
+    animation: bodyBounce 700ms ease infinite;
+}
+.loading_wheel {
+    animation: wheeling 700ms ease infinite;
+    position: absolute;
+}
+.loading_wheel:first-child {
+    bottom: 0;
+    left: 26px;
+}
+.loading_wheel:nth-child(2) {
+    bottom: 0;
+    right: 30px;
+}

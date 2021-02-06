@@ -1,0 +1,18 @@
+.item_detail_delivery_holder {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    background-color: #ecf0f1;
+}
+.item_detail_delivery_holder_inner > p {
+    font-size: 0.7rem;
+}
+.item_detail_delivery_content.missile > span {
+    color:#00891a;
+    font-size: 0.8rem;
+}
+.item_detail_delivery_icon {
+    font-size: 2rem;
+    color: #ff4757;
+    margin-right: 0.3em;
+}

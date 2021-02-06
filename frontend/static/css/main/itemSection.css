@@ -1,0 +1,55 @@
+#app_main .items_container {
+    width: 80%;
+    height: 560vh;
+    padding: 0.2em;
+    position: relative;
+}
+#app_main .items_section {
+    width: 100%;
+    height: 100%;
+    background-color: #dfe6e9;
+    display: grid;
+    grid-auto-rows: 1fr;
+    position: absolute;
+    top:0;
+    left:0;
+    list-style: none;
+}
+#app_main .item_section {
+    width: 100%;
+    height: 80vh;
+    border-bottom: #b2bec3 1px solid;
+    padding: 0.5em;
+    padding-left: 2em;
+    position: relative;
+}
+#app_main .item_section h1 {
+    font-size: 3rem;
+    opacity: 0.2;
+}
+#app_main .item_section.selected h1 {
+    opacity: 1;
+}
+#app_main .item_section.selected::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 1.5em;
+    height: 100%;
+}
+@media (max-width:500px) {
+    #app_main .items_container {
+        width: 100%;
+        height: 280vh;
+    } 
+    #app_main .item_section  {
+        height: 40vh;
+    }
+    #app_main .item_section h1 {
+        font-size: 1.5rem;
+    }
+    #app_main .item_section.selected::before {
+        width: 0.7em;
+    }
+}

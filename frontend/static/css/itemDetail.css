@@ -1,0 +1,149 @@
+#item_detail {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    padding: 3em;
+}
+
+.item_detail_infos {
+    height: 100%;
+    width: 70vw;
+    padding: 1em;
+    position: relative;
+}
+.item_detail_infos table{
+    border-top:1px solid gainsboro;
+    border-bottom:1px solid gainsboro;
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+    width: 100%;
+    height: 10em;
+    font-size: 0.9rem;
+    border-collapse: collapse;
+}
+.item_detail_infos th,td {
+    width: 25%;
+}
+.item_detail_infos img {
+    width: 100%;
+}
+.item_detail_infos th{
+    font-weight: normal;
+    font-size: 1rem;
+    background-color: #ecf0f1;
+}
+.item_detail_infos td{
+    border-bottom:1px solid #eee;
+    text-align: center;
+}
+.item_detail_tab_list {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    height: 2.4em;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    left:0;
+    margin-bottom: 0.5em;
+    background-color: white;
+}
+.item_detail_tab.selected {
+    border-bottom: none;
+}
+.item_detail_tab {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-top: 2px solid black;
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    background-color:#dfe6e9;
+    user-select: none;
+    cursor:pointer;
+    position: relative;
+}
+.item_detail_tab.selected {
+    border-bottom: 0;
+    background-color:#fff;
+    color: var(--mainColor);
+}
+.item_detail_tab:last-child{ 
+    margin-right: 0;
+}
+.item_detail_tab_content {
+    width: 100%;
+    margin-bottom: 2em;
+}
+.item_detail_tab_content.comments {
+    margin-top: 2em;
+}
+
+.item_detail_tab_content.info{
+    margin-top: 2.4em;
+    padding-top: 2.4em;
+}
+.item_detail_tab_content.seller {
+    height: 20em;
+    background-color: mediumvioletred;
+}
+.item_detail_tab_content.refund  {
+    padding-top: 3em;
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+.item_detail_tab_content.refund h2,h4,p,h5,h6,ul {
+    margin-bottom: 0.8em;
+}
+.item_detail_tab_content.refund li{
+    margin-bottom: 0.4em;
+}
+.item_detail_tab_content.refund p{
+    text-indent: 1em;
+}
+
+.item_detail_bread_crumb_icon {
+    font-size: 1.5rem;
+
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1em;
+}
+
+@media (max-width:500px) { 
+    #item_detail { 
+        padding: 0;
+    }
+    .item_detail_first {
+        width: 100vw;
+        padding: 0.5em;
+        grid-template-columns: auto;
+        grid-template-rows: 100vw 2em 1fr;
+    }
+    .item_detail_image_container {
+        width: calc(100vw - 1em);
+        height: calc(100vw - 1em);
+    }
+    .item_detail_image { 
+        width: calc(100vw - 1em);
+        height: calc(100vw - 1em);
+    }
+    .item_detail_infos {
+        width:95vw;
+        padding: 0.5em;
+    }
+    .item_detail_tab { 
+        font-size: 0.9rem;
+    }
+}

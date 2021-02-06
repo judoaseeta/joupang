@@ -1,0 +1,35 @@
+{
+  "name": "joupang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "node_modules/.bin/nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/judoaseeta/joupang.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/judoaseeta/joupang/issues"
+  },
+  "homepage": "https://github.com/judoaseeta/joupang#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.12.5",
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@juggle/resize-observer": "^3.2.0",
+    "express": "^4.17.1",
+    "intersection-observer": "^0.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@testing-library/dom": "^7.29.4",
+    "babel-jest": "^26.6.3",
+    "nodemon": "^2.0.7"
+  }
+}

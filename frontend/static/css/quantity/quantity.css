@@ -1,0 +1,35 @@
+.quantity_input_container {
+    position: relative;
+    display: inline-block;
+    padding:0;
+    margin:0;
+    border: 0.1em solid gainsboro;
+}
+.quantity_input {
+    padding: 1em;
+    width: 5em;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+.quantity_input_buttons {
+    position: absolute;
+    top: 0;
+    right:0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.quantity_input_button {
+    cursor:pointer;
+    margin:0;
+    padding:0;
+    outline: none;
+    width: 2em;
+    height: 100%;
+    border-radius: 0;
+    border: 1px solid gainsboro;
+}
+.quantity_input_button:hover {
+    opacity: 0.7;
+}

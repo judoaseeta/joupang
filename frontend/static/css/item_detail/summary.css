@@ -1,0 +1,45 @@
+.item_detail_desc_summary {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom:1px solid gainsboro;
+    margin-bottom: 1em;
+}
+.item_detail_desc_summary.title {
+    height: 6em;
+}
+.item_detail_desc_summary.title > span {
+    font-size: 0.85rem;
+    text-indent: 1em;
+}
+.item_detail_desc_summary_starholder {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.3em;
+}
+.originalPrices {
+    list-style: none;
+    display: flex;
+}
+.originalPrices .discount {
+    font-size:0.8rem;
+    color:#2c3e50;
+    text-decoration: none;
+}
+.originalPrices span {
+    margin: 0.2em;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+    color: #636e72;
+}
+.salePrices {
+    list-style: none;
+    display: flex;
+}
+.salePrices span {
+    margin: 0.2em;
+    font-size: 1.2rem;
+    color: #c0392b;
+    font-weight: bold;
+}

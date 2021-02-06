@@ -1,0 +1,171 @@
+#app_main .item_section.category1 h1 {
+    color: var(--category1);
+}
+#app_main .item_section.selected.category1::before {
+    background-color: var(--category1);
+}
+#app_main .item_section.category2 h1 {
+    color: var(--category2);
+}
+#app_main .item_section.selected.category2::before {
+    background-color: var(--category2);
+}
+#app_main .item_section.category3 h1 {
+    color: var(--category3);
+}
+#app_main .item_section.selected.category3::before {
+    background-color: var(--category3);
+}
+#app_main .item_section.category4 h1 {
+    color: var(--category4);
+}
+#app_main .item_section.selected.category4::before {
+    background-color: var(--category4);
+}
+#app_main .item_section.category5 h1 {
+    color: var(--category5);
+}
+#app_main .item_section.selected.category5::before {
+    background-color: var(--category5);
+}
+#app_main .item_section.category6 h1 {
+    color: var(--category6);
+}
+#app_main .item_section.selected.category6::before {
+    background-color: var(--category6);
+}
+#app_main .item_section.category7 h1 {
+    color: var(--category7);
+}
+#app_main .item_section.selected.category7::before {
+    background-color: var(--category7);
+}
+#app_main .sidebar {
+    height: 70vh;
+    top: 0;
+    left: 0;
+    width: 7rem;
+    padding: 0.2em;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 5;
+
+    position:sticky;
+    transform: translate3d(-100%,0,0);
+}
+#app_main .sidebar.on {
+    visibility:visible;
+}
+#app_main .sidebar_item {
+    position: relative;
+    margin-bottom: 0.1em;
+    width: 2.5rem;
+    border: 0.1em solid lightgray;
+    cursor: pointer;
+    padding: 0.2em;
+}
+
+#app_main .sidebar_item.on.category1 {
+    background-color: var(--category1);
+}
+#app_main .sidebar_item:hover.category1 {
+    background-color: var(--category1);
+}
+#app_main .sidebar_item.on.category2 {
+    background-color: var(--category2);
+}
+#app_main .sidebar_item:hover.category2 {
+    background-color: var(--category2);
+}
+#app_main .sidebar_item.on.category3 {
+    background-color: var(--category3);
+}
+#app_main .sidebar_item:hover.category3 {
+    background-color: var(--category3);
+}
+#app_main .sidebar_item.on.category4 {
+    background-color: var(--category4);
+}
+#app_main .sidebar_item:hover.category4 {
+    background-color: var(--category4);
+}
+#app_main .sidebar_item.on.category5 {
+    background-color: var(--category5);
+}
+#app_main .sidebar_item:hover.category5 {
+    background-color: var(--category5);
+}
+#app_main .sidebar_item.on.category6 {
+    background-color: var(--category6);
+}
+#app_main .sidebar_item:hover.category6 {
+    background-color: var(--category6);
+}
+#app_main .sidebar_item.on.category7 {
+    background-color: var(--category7);
+}
+#app_main .sidebar_item:hover.category7 {
+    background-color: var(--category7);
+}
+#app_main .sidebar_item:hover .sidebar_item_icon {
+    color: white;
+}
+#app_main .sidebar_item.on .sidebar_item_icon {
+    color: white;
+}
+#app_main .sidebar_item:hover .sidebar_item_desc {
+    transform: translate3d(100%,0,0);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#app_main .sidebar_item_icon {
+    color: #ccc;
+    font-size: 1.5rem;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#app_main .sidebar_item_desc {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7em;
+    height: 100%;
+    padding-left: 0.1em;
+    display: none;
+    z-index: -1;
+}
+#app_main .sidebar_item_desc.category1 {
+    background-color: var(--category1);
+}
+#app_main .sidebar_item_desc.category2 {
+    background-color: var(--category2);
+}
+#app_main .sidebar_item_desc.category3 {
+    background-color: var(--category3);
+}
+#app_main .sidebar_item_desc.category4 {
+    background-color: var(--category4);
+}
+#app_main .sidebar_item_desc.category5 {
+    background-color: var(--category5);
+}
+#app_main .sidebar_item_desc.category6 {
+    background-color: var(--category6);
+}
+#app_main .sidebar_item_desc.category7 {
+    background-color: var(--category7);
+}
+
+@media (max-width:500px) {
+    #app_main .sidebar {
+        display: none;
+    }
+    #app_main .sidebar.on {
+    }
+}

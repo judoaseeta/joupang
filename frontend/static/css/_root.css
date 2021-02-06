@@ -1,0 +1,12 @@
+:root {
+    --category1: #f6699e;
+    --category2 :#00b599;
+    --category3: #1992df;
+    --category4: #ab47bc;
+    --category5: #b74b4b;
+    --category6: #dd6641;
+    --category7: #00aad4;
+    --mainColor: #4285f4;
+    --contentWidth: calc(100vw - 10em);
+    --sliderWidth: calc(100vw - 12em);
+}

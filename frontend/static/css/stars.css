@@ -1,0 +1,23 @@
+.star {
+    background-color: grey;
+    width: 1.5em;
+    height: 1.5em;
+    margin:0;
+    padding: 0;
+}
+
+.star:nth-child(odd) {
+    clip-path: polygon(50% 0%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    margin-right: -0.75em;
+    border-right: 1px solid;
+}
+.star:nth-child(even) {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%);
+    margin-left: -0.75em;
+    border-left: 1px solid;
+}
+
+.star.on {
+    background-color: #f9ca24;
+    border-color: #f9ca24;
+}
