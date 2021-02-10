@@ -2,7 +2,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     list-style: none;
-    gap: 0.5em;
+    gap: 0.5em;    
+    min-height: 40em;
 }
 
 .item_detail_comment {
@@ -34,6 +35,16 @@
 }
 .item_detail_comment_header_right > p {
     font-size: 0.6rem;
+}
+.item_detail_nocomment {
+    width: 100%;
+    background-color: var(--contrastBg);
+    padding:1em;
+    height: 40em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width:500px) { 
