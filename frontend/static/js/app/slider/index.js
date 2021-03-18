@@ -11,19 +11,12 @@ export default class Slider extends Component {
             currPage: 0,
         }
         // binding methods
-        this.getItemsForCategory = this.getItemsForCategory.bind(this);
         this.slide = this.slide.bind(this);
         this.slideBySelector = this.slideBySelector.bind(this);
         this.styleUpdate = this.styleUpdate.bind(this);
         this.getCurrentPage = this.getCurrentPage.bind(this);
         this.updateSliderState = this.updateSliderState.bind(this);
         this.translateList = this.translateList.bind(this);
-    }
-    afterMount() {
-
-    }
-    async getItemsForCategory() {
-
     }
     styleUpdate() {
         const slider = document.getElementById(this.props.id);

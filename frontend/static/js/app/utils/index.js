@@ -1,4 +1,6 @@
 import api from './api.js';
+import categoryConversion from './categoryConversion.js';
+import { trappableTypes } from './tabTrap.js';
 export const iconList = [
     ['패션의류', 'fa-tshirt','#f6699e'],
     ['신선식품','fa-leaf','#00b599'],
@@ -18,6 +20,8 @@ export const parseTimestamp = (timestamp) => {
     return `${y}년 ${m}월 ${d}일 ${h}시 ${mi}분`;
 }
 export {
-    api
+    api,
+    categoryConversion,
+    trappableTypes
 };
 

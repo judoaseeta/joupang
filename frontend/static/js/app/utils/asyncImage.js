@@ -3,7 +3,7 @@ export default function asyncImage(imgUrlorUrls) {
         return new Promise((res,rej) => {
             const img = new Image();
             img.src = imgUrlorUrls;
-            img.onload = res(img)
+            img.onload = res(imgUrlorUrls)
 
         });
         // if array of urls;
@@ -12,7 +12,7 @@ export default function asyncImage(imgUrlorUrls) {
             return new Promise((res,rej) => {
                 const img = new Image();
                 img.src = url;
-                img.onload = res(img)
+                img.onload = res(url)
     
             })
         }))

@@ -9,19 +9,21 @@ class CheckBox extends Component {
     getHtml() {
         const container =  this.container;
         const generatedId = `checkbox_${Math.floor(Math.random() * 100)}`;
-        const img = element('img', {
-            props: {
-                className: 'checkbox_img',
-                src: this.props.src
-            }
-        });
-        renderer(container,img);
+        if(this.props.src) {
+            const img = element('img', {
+                props: {
+                    className: 'checkbox_img',
+                    src: this.props.src
+                }
+            });
+            renderer(container,img);
+        }
         const input = element('input', {
             props: {
                 className: 'checkbox_input',
                 type:'checkbox',
                 id: generatedId,
-                value: `${this.props.index}`
+                value: `${this.props.value}`
             }
         });
         const Label = element('label',{
@@ -44,14 +46,20 @@ class CheckBox extends Component {
     }
 }
 
-export default function checkBox(desc,src,index) {
+export default function checkBox({
+    desc = "",
+    value = "", 
+    src = "",
+    style = {}
+} = {}) {
     return new CheckBox({
         tag: 'div',
         props: {
             className: 'checkbox_container',
             desc,
             src,
-            index
+            value,
+            style
         }
     });
 }

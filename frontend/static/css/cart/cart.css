@@ -1,0 +1,119 @@
+.cart_container {
+    width: 100vw;
+    background-color: var(--contrastBg);
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    min-height: 60vh;
+}
+.cart_inner_container {
+    width: 60vw;
+    height: 100%;
+    background-color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.cart_title_container {
+    color: #2e2e2e;
+    display: flex;
+}
+.cart_title_icon {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+}
+.cart_empty_container {
+    padding: 1em;
+    background-color: var(--contrastBg);
+}
+.cart_empty_container > h3 {
+    color: #63646b;
+}
+.cart_detail_items_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart_detail_items_tablehead {
+    width: 100%;
+    background-color: #f5f5f5;
+}
+.cart_detail_items_tablehead > tr {
+    border-top: 1px solid grey;
+    display: grid;
+    grid-template-columns: 5rem 1fr 3fr 3rem;
+    gap: 0.2em;
+}
+.cart_detail_items_table_th {
+    font-size: 0.8rem;
+    padding: 1em 0;
+    display: flex;
+    background-color: #95afc0;
+    justify-content: center;
+    align-items: center;
+}
+.cart_detail_items_table_th > p {
+    margin: 0;
+    padding: 0;
+}
+
+.cart_detail_item_list {
+    width: 100%;
+
+}
+.cart_detail_prices {
+    background-color: var(--contrastBg);
+    width: 100%;
+    padding: 0.7rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    justify-self: flex-end;
+}
+.cart_detail_item .amount {
+    color: var(--link);
+    font-weight: bold;
+}
+.cart_detail_total_amount {
+    margin: 0;
+}
+.cart_detail_total_amount > span {
+    color: var(--selected);
+    font-weight: bold;
+}
+
+.cart_detail_buttons {
+    padding: 0.5em;
+    width: 100%;
+    margin-top: 0.5em;
+    background-color: var(--contrastBg);
+    display: flex;
+    justify-content: space-around;
+}
+.cart_detail_button {
+    padding: 0.3rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+}
+.cart_detail_button:hover {
+    opacity: 0.8;
+}
+.cart_detail_button.purchase {
+    background-color: var(--mainColor);
+    color: white;
+}
+.cart_detail_button.delete {
+    background-color: var(--selected);
+    color: white;
+}
+
+@media (max-width: 568px) {
+    .cart_inner_container {
+        width: 90vw;
+        padding: 0.5rem;
+    }
+    .cart_detail_items_tablehead > tr {
+        grid-template-columns: 5rem 1fr 3fr 2rem;
+    }
+}

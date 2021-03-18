@@ -5,6 +5,12 @@ import renderer from '../../../component/renderer.js';
 export default class extends Component {
     constructor(props) {
         super(props);
+        this.onClick = this.onClick.bind(this);
+    }
+    onClick(e) {
+        const info = e.target.parentElement;
+        //인포 컴퍼넌트 확장을 위한 클래스 추가
+        info.classList.add('on');
     }
     getHtml() {
         const container = this.container;
@@ -19,7 +25,7 @@ export default class extends Component {
             image_urls
         } = this.props.data;
         const table = `
-            <h4>상품 관련 정보.</h4>
+            <h3 class="item_detail_tab_title">상품 관련 정보.</h3>
             <table>
                 <tbody>
                     <tr>
@@ -54,6 +60,15 @@ export default class extends Component {
                 }
             })) 
         );
+        renderer(container,element('button', {
+            props: {
+                className: 'openButton'
+            },
+            handler: {
+                onClick: this.onClick
+            },
+            content: '모두 보기'
+        }))
         return container;
     }
 }

@@ -16,7 +16,7 @@ export default class extends Component {
         const container = this.container;
         const { data: {saleprices, prices,descriptions, isMissile},comments, } = this.props;
         // calculate average rating from the comments  of the product
-        const avgRating = Math.floor(comments.reduce((acc,curr) => acc + curr.score,0) / this.props.comments.length);
+        const avgRating = Math.floor(comments.reduce((acc,curr) => acc + curr.rating,0) / this.props.comments.length);
         const title = element('li',{
             props: {
                 className: 'item_detail_desc_summary title'

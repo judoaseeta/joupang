@@ -7,6 +7,21 @@
     --category6: #dd6641;
     --category7: #00aad4;
     --mainColor: #4285f4;
+    --selected: #c0392b;
+    --link: #0652DD;
+    --contrastBg: #ecf0f1;
     --contentWidth: calc(100vw - 10em);
     --sliderWidth: calc(100vw - 12em);
+    --notifyBigSize: 5em;
+}
+
+
+.in_link {
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: var(--link);
+}
+.notify_icon {
+    font-size: var(--notifyBigSize);
+    color: var(--selected);
 }

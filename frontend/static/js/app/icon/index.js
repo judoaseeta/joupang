@@ -7,7 +7,8 @@ export default function Icon({
     style = {
 
     },
-    handler = undefined
+    handler = undefined,
+    iconType = 'fas'
 } = {}) {
     const span = element('span', {
         props: {
@@ -18,7 +19,7 @@ export default function Icon({
     });
     renderer(span, element('i', {
         props: {
-            className: `fas ${iconName}`
+            className: `${iconType} ${iconName}`
         }
     }));
     return span;

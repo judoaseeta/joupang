@@ -10,7 +10,7 @@ export default class extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedItem: -1,
+            selectedItem: this.props.data.isMultiItem ? -1 : 0,
             quantity: 1
         }
         this.onInput =  this.onInput.bind(this);
@@ -58,17 +58,20 @@ export default class extends Component {
         e.preventDefault();
         const {selectedItem ,quantity  } = this.state;
         if(selectedItem > -1) {
-            const { saleprices,descriptions } = this.props.data;
+            const { saleprices,descriptions, thumb_urls,name } = this.props.data;
             const newItem = {
-                상품명: descriptions[selectedItem],
-                수량: quantity,
-                금액: saleprices[selectedItem] * quantity,
-                가격: saleprices[selectedItem]
+                name,
+                amount: saleprices[selectedItem] * quantity,
+                price: saleprices[selectedItem],
+                thumb_url: thumb_urls[selectedItem],
+                quantity,
+                href:this.router.getCurrentRoute()
             }
             this.observable.update(state => ({
                 ...state,
                 cart: [...state.cart, newItem]
             }));
+            console.log(this.observable.getState());
         }
     }
     onPurchase(e) {
@@ -85,21 +88,28 @@ export default class extends Component {
                 }
             }); 
             this.props.data.descriptions.forEach( (item,index) => 
-                renderer(ItemSelectors, CheckBox(item, this.props.data.thumb_urls[index],index))
+                renderer(ItemSelectors, CheckBox({
+                    desc: item,
+                    value: String(index),
+                    src: this.props.data.thumb_urls[index]
+                }))
             );
             renderer(container, ItemSelectors);
         }
+        // container for buttons    
         const orderButtons = element('div',{
             props: {
                 className: 'item_detail_order_buttons'
             }
         });
+        // quantity
         const quantity = QuantityInput({
             defaultValue: 1,
             maxlength: 5,
             limit: 1,
             callback: this.quantityCallback
         });
+        // icon for add cart
         const goToCart = element('button', {
             props: {
                 className: 'item_detail_order_button cart'
@@ -114,7 +124,7 @@ export default class extends Component {
         });
         renderer(goToCart,cartIcon);
         renderer(goToCart, '장바구니 담기');
-
+        // icon for purchase immediately
         const purchase = element('button', {
             props: {
                 className: 'item_detail_order_button purchase'
@@ -127,7 +137,7 @@ export default class extends Component {
             iconName:'fa-credit-card',
             className: 'item_detail_order_button_icon purchase'
         });
-
+        // status of order, to show price
         const status = element('div',{
             props: {
                 className: 'item_detail_order_status'

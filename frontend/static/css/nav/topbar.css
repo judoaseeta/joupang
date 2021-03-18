@@ -31,14 +31,32 @@
     text-decoration: none;
     color: black;
 }
-@media (max-width:500px) { 
+.logout {
+    background-color: var(--selected);
+    color: white;
+    outline: none;
+    border: none;
+    cursor:pointer;
+}
+.logout:hover {
+    opacity: 0.8;
+}
+@media(min-width: 569px) and (max-width:1200px) { 
     .topbar { 
-        height: 1.1em;
+        height: 1.4em;
     }
     .topbar_menu {
         margin-right: 1em;
     }
     .topbar_link {
-        font-size: 0.7em;
+        font-size: 0.7rem;
+    }
+}
+@media (max-width:568px) {
+    .topbar_menu {
+        margin-right: 0.3em;
+    }
+    .logout {
+        font-size: 0.7rem;
     }
 }

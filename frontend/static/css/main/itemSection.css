@@ -1,13 +1,12 @@
 #app_main .items_container {
     width: 80%;
-    height: 560vh;
+    height: 350vh;
     padding: 0.2em;
     position: relative;
 }
 #app_main .items_section {
     width: 100%;
     height: 100%;
-    background-color: #dfe6e9;
     display: grid;
     grid-auto-rows: 1fr;
     position: absolute;
@@ -17,18 +16,41 @@
 }
 #app_main .item_section {
     width: 100%;
-    height: 80vh;
+    height: 50vh;
     border-bottom: #b2bec3 1px solid;
-    padding: 0.5em;
     padding-left: 2em;
     position: relative;
 }
+.item_section_video_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+.item_section_video {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+.item_section_wrapper {
+    position: absolute;
+    top: 0.5em;
+    left: 2em;
+    z-index: 5;
+}
+
 #app_main .item_section h1 {
     font-size: 3rem;
     opacity: 0.2;
 }
 #app_main .item_section.selected h1 {
     opacity: 1;
+}
+#app_main .item_section.selected h1:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 #app_main .item_section.selected::before {
     position: absolute;
@@ -37,10 +59,34 @@
     content: '';
     width: 1.5em;
     height: 100%;
+    z-index: 6;
 }
-@media (max-width:500px) {
+.item_section_testimonials {
+    display: none;
+    height: 5em;
+    background-color: transparent;
+    position: absolute;
+    list-style: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-20%);
+    width: 100%;
+}
+.item_section_testimonials .comment{
+    margin-bottom: 0.2em;
+}
+#app_main .item_section.selected .item_section_testimonials {
+    display: flex;
+}
+@media (max-width: 780px) {
+    .item_section_testimonials {
+        transform: translateX(-10%);
+    }
+}
+@media (max-width:568px) {
     #app_main .items_container {
-        width: 100%;
+        width: 95vw;
         height: 280vh;
     } 
     #app_main .item_section  {
@@ -51,5 +97,8 @@
     }
     #app_main .item_section.selected::before {
         width: 0.7em;
+    }
+    .item_section_testimonials {
+        transform: translateX(-50%);
     }
 }

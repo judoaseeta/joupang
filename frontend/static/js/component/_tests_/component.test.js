@@ -1,4 +1,4 @@
-import { getByText } from '@testing-library/dom';
+import { getByText  } from '@testing-library/dom';
 import Component from '../component.js';
 import renderer from '../renderer.js';
 class Example extends Component {
@@ -16,9 +16,30 @@ class Example extends Component {
         }
     }
 }
+class Example2 extends Component {
+    constructor(props) {
+        super(props);
+    }
+    afterMount() {
+        this.update({
+            name: 'Gabriel'
+        });
+    }
+    getHtml() {
+        const container = this.container;
+        if(this.state.name) {
+            renderer(container,`<h2>${this.state.name}</h2>`);
+        } else {
+            renderer(container,`<h2>No Name</h2>`);
+        }
+        return container;
+    }
+}
 
 describe('Testing Component',() => {
-    
+    beforeEach(() => {
+        jest.useFakeTimers();
+    })
     it('the render method of a base component should return default element', () => {
         const component = new Component({});
         const container = document.createElement('div');
@@ -59,5 +80,5 @@ describe('Testing Component',() => {
 
         // update by nor function or state should throw error.
         expect(() => component.update('cewwe')).toThrow();
-    })
+    });
 });

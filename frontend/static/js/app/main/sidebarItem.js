@@ -21,16 +21,6 @@ export default class extends Component {
             iconName: this.props.iconName,
             className: 'sidebar_item_icon',
         }));
-        const description = element('div',{ 
-            props: {
-                className: `sidebar_item_desc category${this.props.index +1}`,
-            },
-            
-        });
-        renderer(description, element('p', {
-            content: this.props.category
-        }))
-        renderer(container, description);
         return container;
     }
 }

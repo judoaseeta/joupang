@@ -30,8 +30,6 @@ select:focus + .focus {
     display: grid;
     width: 100%;
     align-content: center;
-    min-width: 7ch;
-    max-width: 12ch;
     border: 1px solid var(--select-border);
     padding: 0.25em 0.5em;
     font-size: 0.9rem;

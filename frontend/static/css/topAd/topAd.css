@@ -1,0 +1,55 @@
+.topAd {
+    width:100vw;
+    height: 10em;
+    background: url('https://res.cloudinary.com/mitoo/image/upload/v1613569084/joupang/topad.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transition: transform 0.3s;
+}
+.topAd.off {
+    transform: translate3d(-100%,0,0);
+}
+.topAd_overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(175,180,180);
+    background: radial-gradient(circle, rgba(175,180,180,0.6) 1%, rgba(0,0,0,0.7) 100%);    
+}
+
+.topAd .title {
+    color:white;
+    font-size: 1.8rem;
+}
+.topAd .close {
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top:0.3em;
+    right: 0.3em;
+    z-index: 5;
+}
+
+@media (max-width: 568px) {
+    .topAd_overlay {
+        padding: 0 2rem;
+    }
+    .topAd .title {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 900px) {
+    .topAd_overlay {
+        padding: 0 2rem;
+    }
+    .topAd .title {
+        font-size: 1.4rem;
+    }
+}

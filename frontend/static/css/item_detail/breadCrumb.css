@@ -12,6 +12,7 @@
     cursor: pointer;
     margin-right: 1em;
     padding-right: 2em;
+    min-width: 6em;
 }
 .item_detail_breadcrumb_link:hover {
     text-decoration: underline;
@@ -32,4 +33,25 @@
     right: 0;
     width: 1em;
     height: 1em;
+}
+@media(min-width: 569px) and (max-width: 1200px) {
+    .item_detail_breadcrumbs {
+        padding-left: 5vw;
+        width: 25em;
+    }
+    .item_detail_breadcrumb {
+        margin-right: 0.4em;
+        position:relative;
+        font-size: 0.7rem;
+        cursor: pointer;
+        margin-right: 0.8em;
+        padding-right: 1.7em;
+        min-width: 5em;
+    }
+}
+@media (max-width: 568px) {
+    .item_detail_breadcrumbs { 
+        width:20em;
+        padding-left: 1em;
+    }
 }

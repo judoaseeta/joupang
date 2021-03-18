@@ -5,7 +5,16 @@
     margin:0;
     padding: 0;
 }
-
+.star.small {
+    width: 0.75em;
+    height: 0.75em;
+}
+.star.small:nth-child(odd) {
+    margin-right: -0.375em;
+}
+.star.small:nth-child(even) { 
+    margin-left: -0.375em;
+}
 .star:nth-child(odd) {
     clip-path: polygon(50% 0%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     margin-right: -0.75em;

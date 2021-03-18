@@ -1,7 +1,7 @@
 import renderer from './renderer.js';
 import element from './element.js';
 /* Component rendering process.
- * render => afterMount => onUpdate => unmount
+ * render => afterMount => update => afterUnMount
  * 
  */
 export default class {
@@ -25,6 +25,8 @@ export default class {
         this.setState = this.setState.bind(this);
         this.update = this.update.bind(this);
         this.afterMount = this.afterMount.bind(this);
+        this.afterUnMount = this.afterUnMount.bind(this);
+        this.addAfterUnMount = this.addAfterUnMount.bind(this);
         // set possible properties to the class.
         this.state = state;
         this.router = router;
@@ -33,19 +35,31 @@ export default class {
         this.props = props;
         this.isNoLifeCycle = isNoLifeCycle;
         this.initContainer = this.initContainer.bind(this);
-        this.initContainer();
+        this.container = this.initContainer();
     }
     initContainer() {
-        this.container = element(this.tag, {
+        return  element(this.tag, {
             props: {
                 id: this.props.id,
                 className: this.props.className,
-                dataset: this.props.dataset
+                dataset: this.props.dataset,
+                style: this.props.style
             },
-            handler: this.props.handler
+            state: this.state,
+            handler: this.props.handler,
+            isNoLifeCycle: this.isNoLifeCycle
         });
     }
     afterMount() {
+    }
+    afterUnMount() {
+
+    }
+    // function add afterUnMount to CleanUp  
+    addAfterUnMount() {
+        if(window.cleanUp) {
+            window.cleanUp.addCleanUp(this.afterUnMount);
+        }
     }
     render() {
         // check if oldComponent in the DOM tree
@@ -53,9 +67,7 @@ export default class {
         const children = this.getHtml();
         
         if(oldComponent) {
-            const newContainer = element(this.tag,{
-                props:this.props
-            });
+            const newContainer = children.cloneNode();
         
             if(children.children) {
                 const elements = Array.from(children.children);
@@ -75,9 +87,9 @@ export default class {
                     clearTimeout(timeout);
                 },0);
             } else {
-                console.log('no lifecycle');
             }
-            this.initContainer();
+            this.container = this.initContainer();
+            this.addAfterUnMount();
             return children;  
         }
     }

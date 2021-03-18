@@ -13,9 +13,11 @@ export default class extends Component {
     }
     navigate() {
         const href = this.props.href;
+        const state = this.props.linkState ? this.props.linkState : null;
         const ev = new CustomEvent('navigateTo', {
             detail: {
-                href
+                href,
+                state
             }
         });
         document.body.dispatchEvent(ev);
@@ -26,7 +28,9 @@ export default class extends Component {
             props: {
                 id: this.props.id,
                 className: this.props.className,
-                dataset: this.props.dataset
+                dataset: this.props.dataset,
+                style: this.props.style,
+                attributes: this.props.attributes,
             },
             handler: {
                 onClick: this.navigate

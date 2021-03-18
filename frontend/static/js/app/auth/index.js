@@ -48,7 +48,7 @@ export default class extends Component {
         const authInfo = id + ':' + password;
         const encodedAuthInfo = btoa(unescape(encodeURIComponent(authInfo)));
         try {
-            const result = await fetch(api.signIn, {
+            const result = await fetch(api.login, {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
@@ -63,10 +63,11 @@ export default class extends Component {
                     window.localStorage.setItem('joupang', parsed.token);
                     this.observable.update({
                         auth: {
-                            isLogin: true
+                            isLogin: true,
+                            userId: parsed.id
                         }
                     });
-                    console.log(this.observable.getState());
+                    history.go(-1);
                 }
             }
         } catch(e) {

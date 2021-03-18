@@ -38,7 +38,6 @@ export default class extends Component {
         } else {
             const now = new Date();
             const expected = new Date(new Date().setDate(now.getDate() + 2));
-            console.log(expected);
         }
     }
     // 미사일 배송 남은 시간 구하기

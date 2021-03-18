@@ -1,0 +1,121 @@
+.items_categoryNav {
+    width:100%;
+    list-style: none;
+    border-right: #ecf0f1 0.1em solid;
+}
+.items_category_category_link {
+    position: relative;
+    padding-left: 1.2em;
+    cursor: pointer;
+}
+.items_category_category_link.all > h4{
+    opacity: 0.1;
+}
+.items_category_category_link.all.current > h4{
+    opacity: 1;
+}
+.items_category_category_link:hover {
+   text-decoration: underline;
+}
+.items_category_category_link::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    content: '';
+    border-radius: 50%;
+    opacity: 0.1;
+}
+.items_category_category_link.current::before { 
+    opacity: 1;
+}
+.items_category_category_link.fashion::before {
+    background-color: var(--category1);
+}
+.items_category_category_link.travel::before {
+    background-color: var(--category4);
+}
+.items_category_category_link.electronics::before {
+    background-color: var(--category3);
+}
+.items_category_category_link.homedeco::before {
+    background-color: var(--category6);
+}
+.items_category_category_link.books::before {
+    background-color: var(--category5);
+}
+.items_category_category_link.camping::before {
+    background-color: var(--category7);
+}
+.items_category_category_link.food::before {
+    background-color: var(--category2);
+}
+.items_category_item {
+
+}
+.items_category_subcategories {
+    list-style: none;
+}
+.items_category_subcategory{
+    font-size: 0.8rem;
+    color:#718093;
+    cursor: pointer;
+}
+.items_category_subcategory_link {
+    position: relative;
+    padding-left: 2.2em;
+}
+.items_category_subcategory_link:hover {
+    text-decoration: underline;
+}
+.items_category_subcategory_link.current::before {
+    position: absolute;
+    content: '>';
+    top: 0;
+    left: 1em;
+    font-size: 1rem;
+    color:black;
+}
+@media (max-width:568px) {
+    .items_categoryNav {
+        margin-left: 0;
+        padding-left: 0.5rem;
+    } 
+    .items_category_category_link {
+        padding-left: 0.8em;
+        font-size: 0.8rem;
+    }
+    .items_category_category_link::before {
+        width: 0.6em;
+        height: 0.6em;
+        transform: translate3d(0,50%,0);
+    }
+    .items_category_subcategory {
+        font-size: 0.6rem;
+    }
+    .items_category_subcategory_link {
+        padding-left: 1.5em;
+    }
+}
+@media (max-width: 768px) {
+    .items_categoryNav {
+        margin-left: 0;
+        padding-left: 0.5rem;
+    } 
+    .items_category_category_link {
+        padding-left: 0.8em;
+        font-size: 0.8rem;
+    }
+    .items_category_category_link::before {
+        width: 0.6em;
+        height: 0.6em;
+        transform: translate3d(0,50%,0);
+    }
+    .items_category_subcategory {
+        font-size: 0.6rem;
+    }
+    .items_category_subcategory_link {
+        padding-left: 1.5em;
+    }
+}

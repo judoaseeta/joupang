@@ -2,17 +2,40 @@
     display: flex;
     align-items: center;
     padding: 1em;
-    background-color: #ecf0f1;
+    background-color: var(--contrastBg);
 }
 .item_detail_delivery_holder_inner > p {
     font-size: 0.7rem;
 }
 .item_detail_delivery_content.missile > span {
-    color:#00891a;
+    color:#0652DD;
     font-size: 0.8rem;
+    font-weight: bold;
 }
 .item_detail_delivery_icon {
     font-size: 2rem;
     color: #ff4757;
     margin-right: 0.3em;
+}
+@media (min-width: 801px) and (max-width: 1200px) {
+    .item_detail_delivery_content  {
+        font-size: 0.85rem;
+    }
+}
+@media (min-width: 569px) and (max-width: 800px) {
+    .item_detail_delivery_icon {
+        font-size: 1.4rem;
+        margin-right: 0.2em;
+    }
+    .item_detail_delivery_holder {
+        padding: 0.2em;
+    }
+    .item_detail_delivery_content  {
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 568px) {
+    .item_detail_delivery_holder { 
+        padding: 0.5em;
+    }
 }

@@ -30,4 +30,8 @@ test('testing Observable',() => {
     observable.subscribe(mockSubscriber2)
     observable.update(mockUpdateValue);
     expect(mock2.mock.calls[0][0]).toEqual(mockUpdateValue.map);
+
+    observable.unsubscribe(mockSubscriber2)
+    observable.update(mockUpdateValue);
+    expect(mock2.mock.calls.length).toEqual(1);
 })

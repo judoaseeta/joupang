@@ -12,6 +12,9 @@ export default class extends Component {
         this.updateSelector = this.updateSelector.bind(this);
         this.observable.subscribe(this.subscriber);
     }
+    afterUnMount() {
+        this.observable.unsubscribe(this.subscriber);
+    }
     onMouseover(e) {
         const id =e.target.dataset.id;
         if(id) {
@@ -19,20 +22,28 @@ export default class extends Component {
         }
     }
     subscriber(state) {
+
+        // page가 바뀐 경우
+        // 업데이트 펑션 호출
         this.updateSelector(state.sliderState.currPage);
     }
     updateSelector(selectedPage) {
-        const selectors = document.getElementById(this.props.id).children;
-        for(let i =0; i< selectors.length; i++) {
-            const isSamePage = Number(selectors[i].dataset.id) === selectedPage;
-            const isAlreadySelected = selectors[i].classList.contains('selected');
-            if(!isSamePage && isAlreadySelected) {
-                selectors[i].classList.remove('selected');
-            }
-            if(isSamePage && !isAlreadySelected) {
-                selectors[i].classList.add('selected');
+        const selectorContainer = document.getElementById(this.props.id)
+        if(selectorContainer) {
+            const selectors = selectorContainer.children;
+            for(let i =0; i< selectors.length; i++) {
+                const isSamePage = Number(selectors[i].dataset.id) === selectedPage;
+                const isAlreadySelected = selectors[i].classList.contains('selected');
+                if(!isSamePage && isAlreadySelected) {
+                    selectors[i].classList.remove('selected');
+                }
+                if(isSamePage && !isAlreadySelected) {
+                    selectors[i].classList.add('selected');
+                }
             }
         }
+
+        
     }
     getHtml() {
         const container = element(this.tag,{

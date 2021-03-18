@@ -115,13 +115,6 @@
 #app_main .sidebar_item.on .sidebar_item_icon {
     color: white;
 }
-#app_main .sidebar_item:hover .sidebar_item_desc {
-    transform: translate3d(100%,0,0);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 #app_main .sidebar_item_icon {
     color: #ccc;
     font-size: 1.5rem;
@@ -130,42 +123,13 @@
     justify-content: center;
     align-items: center;
 }
-#app_main .sidebar_item_desc {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 7em;
-    height: 100%;
-    padding-left: 0.1em;
-    display: none;
-    z-index: -1;
-}
-#app_main .sidebar_item_desc.category1 {
-    background-color: var(--category1);
-}
-#app_main .sidebar_item_desc.category2 {
-    background-color: var(--category2);
-}
-#app_main .sidebar_item_desc.category3 {
-    background-color: var(--category3);
-}
-#app_main .sidebar_item_desc.category4 {
-    background-color: var(--category4);
-}
-#app_main .sidebar_item_desc.category5 {
-    background-color: var(--category5);
-}
-#app_main .sidebar_item_desc.category6 {
-    background-color: var(--category6);
-}
-#app_main .sidebar_item_desc.category7 {
-    background-color: var(--category7);
-}
-
-@media (max-width:500px) {
+@media (max-width:568px) {
     #app_main .sidebar {
         display: none;
-    }
-    #app_main .sidebar.on {
+    }       
+}
+@media (max-width: 900px) {
+    #app_main .sidebar { 
+        z-index: 999;
     }
 }

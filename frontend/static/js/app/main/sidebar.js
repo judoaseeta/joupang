@@ -1,10 +1,7 @@
 import Component from '../../component/component.js';
-import element from '../../component/element.js';
 import renderer from '../../component/renderer.js';
 import Item from './sidebarItem.js';
 import { iconList } from '../utils/index.js';
-
-
 export default class extends Component {
     constructor(props) {
         super(props);
@@ -12,17 +9,24 @@ export default class extends Component {
         this.initObserver = this.initObserver.bind(this);
         this.onClick = this.onClick.bind(this);
         this.observable.subscribe(this.subscriber);
+        this.unsubscribers = [];
     }
     afterMount() {
         this.initObserver();
+    }
+    afterUnMount() {
+        this.observable.unsubscribe(this.subscriber);
+        this.unsubscribers.forEach( unsubscribe => unsubscribe());
     }
     subscriber(state) {
         const selected = state.itemSection.selectedSection;
         if(selected > -1) {
             const container = document.getElementById(this.props.id);
-            const sidebarItems = container.getElementsByClassName('sidebar_item');
-            for(let i =0; i < sidebarItems.length; i++) {
-                sidebarItems[i].classList.toggle('on',i === selected);
+            if(container) {
+                const sidebarItems = container.getElementsByClassName('sidebar_item');
+                for(let i =0; i < sidebarItems.length; i++) {
+                    sidebarItems[i].classList.toggle('on',i === selected);
+                }
             }
         }
     }
@@ -35,6 +39,7 @@ export default class extends Component {
             threshold: 1
         });
         observer.observe(target);
+        this.unsubscribers.push(() => observer.unobserve(target));
     }
     onClick(index) {
         return function(e) {

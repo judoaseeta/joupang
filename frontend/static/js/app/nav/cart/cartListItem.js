@@ -2,6 +2,7 @@ import Component from '../../../component/component.js';
 import element from '../../../component/element.js';
 import renderer from '../../../component/renderer.js';
 import Icon from '../../icon/index.js';
+import Link from '../../../router/link.js';
 
 export default class extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ export default class extends Component {
     }
     getHtml() {
         const container =  this.container;
-        const { thumb_url, name, price,amount, quantity } = this.props.data;
+        const { thumb_url, name, price,amount, quantity,href } = this.props.data;
         renderer(container, new Icon({
             iconName: 'fa-trash',
             className: 'main_nav_cart_list_item_remove',
@@ -17,13 +18,17 @@ export default class extends Component {
                 onClick:this.props.removeItem(this.props.index)
             }
         }));
-        console.log(this.props.data);
         //썸네일 이미지
-        const thumbnail = element('img', {
+        const thumbnail = new Link({
             props: {
-                className: 'main_nav_cart_list_thumbnail',
-                src: thumb_url
-            },
+                children: element('img', {
+                    props: {
+                        className: 'main_nav_cart_list_thumbnail',
+                        src: thumb_url
+                    },
+                }),
+                href
+            }
         });
         renderer(container,thumbnail);
         // 테이블로 카트아이템 표시
@@ -78,7 +83,12 @@ export default class extends Component {
         renderer(tbody,firstRow);
         renderer(tbody,secondRow);
         renderer(table,tbody);
-        renderer(container, table);
+        renderer(container, new Link({
+            props:{
+                children: table,
+                href    
+            }
+        }));
         return container;
     }
 }

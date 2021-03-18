@@ -25,7 +25,8 @@ export default class extends Component {
                 className: 'item_detail_desc_order',
                 data: this.props.data,
             },
-            observable: getObservable()
+            observable: getObservable(),
+            router: this.router
         }));
         return container;
     }

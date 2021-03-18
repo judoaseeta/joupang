@@ -1,0 +1,154 @@
+.items_container {
+    display: grid;
+    width: 70vw;
+    grid-template-columns: 15em 1fr;
+}
+.items_item_list_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.items_controllers {
+    display: flex;
+    margin-top: 1em;
+    width: 100%;
+    justify-content: space-around;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+}
+.items_controllers .checkbox_container {
+    padding: 0.3em;
+}
+.items_controllers .checkbox_container .missile{
+    color: red;
+}
+.items_controllers .checkbox_container p {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+}
+.items_item_list {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    list-style: none;
+    width: 100%;
+    padding-left: 4em;
+    padding-right: 4em;
+    height: 100%;
+    gap: 0.3em;
+}
+.items_list_item {
+    padding:0.5em;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    position: relative;
+}
+
+.items_list_item:hover {
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%);
+}
+.items_list_item:hover .items_list_item_title { 
+    text-decoration: underline;
+}
+
+.items_list_item img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.items_list_item_desc {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.6em;
+    background-color: rgba(255,255,255,0.7);
+}
+.items_list_item_title {
+    font-size: 0.9rem;
+}
+.items_list_item_price {
+    margin: 0.2em;
+    font-size: 0.9rem;
+    color: #c0392b;
+    font-weight: bold;
+}
+@media (max-width: 568px) {
+    .items_container {
+        width: 100vw;
+        grid-template-columns: 5em 1fr;
+    }
+    .items_item_list { 
+        grid-template-columns: repeat(2,1fr);
+        padding-left: 1em;
+        padding-right: 1em;
+        gap: 0.1em;
+    }
+    .items_controllers .checkbox_container {
+        padding: 0.1em;
+    }
+    .items_controllers .checkbox_container .missile{
+        color: red;
+    }
+    .items_controllers .checkbox_container p {
+        margin-bottom: 0;
+        font-size: 0.6rem;
+    }
+    .items_list_item {
+        padding:0.5em;
+        height: 175px;
+    }
+    .items_list_item img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    .items_list_item_desc {
+        height: 75px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0.6em;
+        background-color: rgba(255,255,255,0.7);
+    }
+    .items_list_item_title {
+        font-size: 0.7rem;
+    }
+    .items_list_item_price {
+        margin: 0.2em;
+        font-size: 0.7rem;
+        color: #c0392b;
+        font-weight: bold;
+    }
+}
+@media (min-width:569px) and (max-width:1200px) { 
+    .items_container {
+        width: 90vw;
+        grid-template-columns: 8rem 1fr;
+    }
+    .items_item_list {
+        grid-template-columns: repeat(2,1fr);
+        padding-left: 2em;
+        padding-right: 2em;
+        height: 100%;
+        gap: 0.2em;
+    }
+    .items_list_item { 
+        height: 350px;
+    }
+    .items_controllers {
+        display: flex;
+        margin-top: 1em;
+        width: 100%;
+        justify-content: space-around;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 0.5em;
+    }
+}

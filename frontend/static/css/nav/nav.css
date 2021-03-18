@@ -11,28 +11,37 @@
     margin: 0;
     pointer-events: none;
 }
-.main_nav_category {
-    width: 5em;
-    height: 5em;
-    background-color: var(--mainColor);
+
+.main_nav_middle {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 5em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.main_nav_middle_upper {
+    display: flex;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
 }
-.main_nav_category_btn{
-    font-size: 2rem;
-    color: white;
-    cursor:pointer;
-}
-.main_nav_middle {
-    display: flex;
-    align-items: center;
+.middleNav {
     width: 100%;
-    height: 5em;
-    padding-left: 6em;
-    padding-right: 6em;
+    height: 2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
 }
-
+.middleNav_link {
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.middleNav_link:hover {
+    text-decoration: underline;
+}
 .main_nav_items {
     display: flex;
     align-items: center;
@@ -58,23 +67,63 @@
     align-items: center;
     cursor:pointer;
     -webkit-user-drag: none;
+    user-select: none;
 }
 .main_nav_logo img {
     width: 182px;
     height: 58px;
 }
+@media(min-width:1301px) {
+    #main_nav { 
+        width: 75vw;
+    }
+    .main_nav_middle {
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+}
+@media(min-width: 569px) and (max-width: 800px) {
+    .main_nav_middle {
+        display: flex;
+        width: 100%;
+        height: 3em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+    #main_nav { 
+        width: 95vw;
+    }
+    .main_nav_logo img {
+        width: 91px;
+        height: 29px;
+    }
 
-@media (max-width:500px) { 
+}
+@media (min-width: 801px) and (max-width:1200px) {  
+    #main_nav { 
+        width: 90vw;
+    }
+    .main_nav_logo img {
+        width: 130px;
+        height: 35px;
+    }
+
+    .main_nav_middle {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 3em;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .middleNav_link {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width:568px) { 
     #main_nav {
         width: 100vw;
-    }
-    .main_nav_category  {
-        width: 3em;
-        height: 3em;
-    }
-
-    .main_nav_category_btn{
-        font-size: 1.5rem;
     }
     .main_nav_middle {
         padding-left: 0.3em;
@@ -86,10 +135,7 @@
         width: 91px;
         height: 29px;
     }
-
-
-    .main_nav_cart {
-        height: 3em;
-        width: 3em;
+    .middleNav_link {
+        font-size: 0.6rem;
     }
 }

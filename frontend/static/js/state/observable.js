@@ -29,4 +29,10 @@ export default class Observable {
         }
         this._notify();
     }
+    unsubscribe(observer) {
+        const index = this._observers.findIndex((v) => v === observer);
+        if(index > -1) {
+            this._observers = [...this._observers.slice(0, index),...this._observers.slice(index +1)];
+        }
+    }
 }
