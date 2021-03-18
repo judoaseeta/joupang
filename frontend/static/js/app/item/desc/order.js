@@ -71,7 +71,6 @@ export default class extends Component {
                 ...state,
                 cart: [...state.cart, newItem]
             }));
-            console.log(this.observable.getState());
         }
     }
     onPurchase(e) {
