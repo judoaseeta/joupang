@@ -44,8 +44,3 @@
     color: #c0392b;
     font-weight: bold;
 }
-@media (max-width: 568px) {
-    .item_detail_desc_summary { 
-        
-    }
-}

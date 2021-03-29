@@ -6,13 +6,13 @@
     padding-left: 10vw;
 }
 .item_detail_breadcrumb {
-    margin-right: 0.5em;
+    margin-right: 0.5rem;
     position:relative;
     font-size: 0.8rem;
     cursor: pointer;
-    margin-right: 1em;
-    padding-right: 2em;
-    min-width: 6em;
+    margin-right: 1rem;
+    padding-right: 2rem;
+    min-width: 7rem;
 }
 .item_detail_breadcrumb_link:hover {
     text-decoration: underline;
@@ -23,16 +23,16 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 1em;
-    height: 1em;
+    width: 1rem;
+    height: 1rem;
 }
 .item_detail_breadcrumb:last-child:after {
     content: '';
     position: absolute;
     top: 0;
     right: 0;
-    width: 1em;
-    height: 1em;
+    width: 1rem;
+    height: 1rem;
 }
 @media(min-width: 569px) and (max-width: 1200px) {
     .item_detail_breadcrumbs {

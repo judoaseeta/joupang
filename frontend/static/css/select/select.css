@@ -57,3 +57,11 @@ select,
 .custom_select_option {
     user-select: none;
 }
+
+@media not all and (min-resolution:.001dpcm) { 
+    @media all {
+        .custom_select:after {
+            display: none;
+        }
+    }
+}

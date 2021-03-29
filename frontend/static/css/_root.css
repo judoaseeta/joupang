@@ -14,8 +14,33 @@
     --sliderWidth: calc(100vw - 12em);
     --notifyBigSize: 5em;
 }
+@font-face {
+    font-family: "NanumGothicRegular";
+    src: url("/assets/NanumGothic-Regular.ttf") format("truetype");
+}
+@font-face {
+font-family: "NanumGothicBold";
+src: url("/assets/NanumGothic-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "NanumGothicExtraBold";
+    src: url("/assets/NanumGothic-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "NanumMyengjo";
+    src: url("/assets/NanumMyengjo-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "NanumMyengjoBold";
+    src: url("/assets/NanumMyengjo-Bold.ttf") format("truetype");
+}
 
-
+h1,h2,h3,h4,h5,h6 {
+    font-family: NanumGothicBold;
+}
+a,p {
+    font-family: NanumMyengjo;
+}
 .in_link {
     font-size: 0.85rem;
     cursor: pointer;

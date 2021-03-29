@@ -9,8 +9,6 @@
 }
 
 .item_detail_desc {
-    border-left:1px solid #eee;
-    border-right:1px solid #eee;
     width: 100%;
     padding: 0.5em;
     display: flex;

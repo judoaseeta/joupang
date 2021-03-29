@@ -1,7 +1,7 @@
 .checkbox_container {
     border: 1px solid gainsboro;
-    max-width: 7em;
-    max-height: 3em;
+    max-width: 7rem;
+    min-height: 3rem;
     position: relative;
     display: flex;
     justify-content: center;

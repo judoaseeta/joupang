@@ -1,5 +1,5 @@
 export default {
-    '패션의류' :'fashion',
+    '패션' :'fashion',
     '신선식품' :'food',
     '전자제품' : 'electronics',
     '여행' : 'travel',
